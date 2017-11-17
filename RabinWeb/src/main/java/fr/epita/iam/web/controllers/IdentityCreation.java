@@ -31,13 +31,15 @@ public class IdentityCreation extends AbstractSpringServlet {
      */
     public IdentityCreation() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
 	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Creating identity in DB
+	 * Parsing format of date
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final String displayName = request.getParameter("displayName");

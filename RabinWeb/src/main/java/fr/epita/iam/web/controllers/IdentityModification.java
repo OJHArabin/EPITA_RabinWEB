@@ -41,20 +41,12 @@ public class IdentityModification extends AbstractSpringServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 *  getting user selection parameter
+	 *  passing to Update form
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id= request.getParameter("selection");
-//				String id= request.getParameter("id");
-//				String displayName= request.getParameter("displayName");
-//				String email= request.getParameter("email");
-//				String rawDate= request.getParameter("birthdate");
-//				final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				
-				
-				
-					
-					
-					LOGGER.info("value of ID"+id); 
+         LOGGER.info("value of ID"+id); 
 					
 					
 					if ( id != null )

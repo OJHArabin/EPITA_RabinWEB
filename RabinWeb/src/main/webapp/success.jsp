@@ -11,7 +11,7 @@
 				<div class="container">
 					<h1 class="text-info">The Identity is Created</h1>
 					<a href="welcome.jsp">Welcome</a>
-					<a href="Search.jsp">Search</a>
+					<a href="search.jsp">Search</a>
 				</div>
 			</div>
 			

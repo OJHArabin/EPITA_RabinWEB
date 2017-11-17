@@ -39,6 +39,9 @@ public class IdentityUpdate extends AbstractSpringServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 *  Updating identities
+	 *  By providing displayName, email, uid, birthDate
+	 *  Parsing birthDate
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 try {	
@@ -47,21 +50,14 @@ public class IdentityUpdate extends AbstractSpringServlet {
 				final String email = request.getParameter("email");
 				final String rawDate = request.getParameter("birthDate");
 				final String id = request.getParameter("id");
-				
-				
-				
 				final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				final Date date = sdf.parse(rawDate);
-
-				Identity currentVersion = dao.getById(Integer.valueOf(id));
+                Identity currentVersion = dao.getById(Integer.valueOf(id));
 				currentVersion.setBirthDate(date);
 				currentVersion.setDisplayName(displayName);
 				currentVersion.setEmail(email);
-				
 				dao.update(currentVersion);
 	            LOGGER.info("Identity Updated");
-				
-
 				response.sendRedirect("Update.jsp");
 
 			} catch (final Exception pe) {

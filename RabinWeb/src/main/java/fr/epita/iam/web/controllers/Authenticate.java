@@ -31,25 +31,19 @@ public class Authenticate extends AbstractSpringServlet  {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * Checking if user is valid user by checking credentials
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final String login = request.getParameter("firstName");
 		final String password = request.getParameter("password");
 		LOGGER.info("trying to authenticate with that login {}", login);
 		final HttpSession session = request.getSession();
-		// TODO you have to implement a *REAL* authentication mechanism
-
-		if ("ojha".equals(login)&&"ojha".equals(password)) {
+	    // TODO you have to implement a *REAL* authentication mechanism
+         if ("ojha".equals(login)&&"ojha".equals(password)) {
 			// then we are authenticated, we can move to the welcome page
 			session.setAttribute("authenticated", true);
 			request.getRequestDispatcher("welcome.jsp").forward(request, response);

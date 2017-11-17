@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 
 /**
  * @author rabin
- *
+ * Class that implements the data model used for the identities
  */
 
 @Entity
@@ -36,14 +36,16 @@ public class Identity {
 	@Column(name = "IDENTITY_BIRTHDATE")
 	@Temporal(TemporalType.DATE)
 	private Date birthDate;
-
+    
+	/**
+	 * Default Constructor
+	 */
 
 	public Identity() {
 
 	}
 
 	/**
-	 * @param id
 	 * @param displayName
 	 * @param email
 	 * @param birthDate
@@ -55,6 +57,13 @@ public class Identity {
 		this.birthDate=birthDate;
 	}
 	
+	
+	/**
+	 * @param id
+	 * @param displayName
+	 * @param email
+	 * @param birthDate
+	 */
 	public Identity(long id, String displayName, String email, Date birthDate) {
 		super();
 		this.id = id;

@@ -36,6 +36,7 @@ public class SearchIdentity extends AbstractSpringServlet {
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * passing displayName and email to search the identities
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		{
